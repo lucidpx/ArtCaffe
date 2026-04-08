@@ -1,0 +1,5 @@
+# Kopirajte u .dev.vars za lokalno testiranje: wrangler pages dev dist
+# Lozinka: isti SHA-256 heks kao u produkciji (npm run hash-password -- "vaša-lozinka")
+
+SESSION_SECRET=minimum-32-karaktera-slucajnog-teksta-za-potpis-sesije
+ADMIN_PASSWORD_SHA256=ovde-nalepite-izlaz-iz-npm-run-hash-password

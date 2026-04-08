@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sr-Latn" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="O nama — priča o Art caffe, vrednostima i iskustvu koje nudimo." />
+    <title>Art caffe — O nama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/site.js" defer></script>
+  </head>
+  <body class="min-h-full">
+    {{HEADER}}
+
+    <main id="main">
+      <section
+        id="parallax-root"
+        class="relative flex min-h-[88vh] flex-col items-center justify-center overflow-hidden bg-surface px-4 pb-20 pt-28 md:min-h-[90vh]"
+      >
+        <div
+          class="pointer-events-none absolute inset-0 z-0 bg-black/45 dark:bg-black/55"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-0 z-[1] bg-hero-mesh opacity-[0.88] dark:opacity-[0.82]"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/35 via-transparent to-black/50 dark:from-black/45 dark:via-transparent dark:to-black/60"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="pointer-events-none absolute inset-0 z-[2] lattice-bg opacity-35 dark:opacity-20"
+          data-parallax-speed="0.12"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute -left-32 top-1/4 z-[2] h-72 w-72 rounded-full bg-accent/20 blur-3xl dark:bg-accent/15"
+          data-parallax-speed="0.25"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute -right-24 bottom-1/4 z-[2] h-96 w-96 rounded-full bg-accent-warm/15 blur-3xl"
+          data-parallax-speed="0.18"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative z-10 mx-auto max-w-3xl text-center">
+          <p
+            class="animate-fade-up text-sm font-semibold uppercase tracking-[0.2em] text-white/90 drop-shadow-sm dark:text-accent-warm/95"
+          >
+            Upoznajte nas
+          </p>
+          <h1
+            class="animate-fade-up mt-4 font-display text-5xl text-white drop-shadow-md sm:text-6xl md:text-7xl"
+            style="animation-delay: 0.05s"
+          >
+            O nama
+          </h1>
+          <div
+            class="animate-fade-up mx-auto mt-8 max-w-2xl space-y-5 text-center text-base leading-relaxed text-white/95 drop-shadow-sm md:text-lg"
+            style="animation-delay: 0.1s"
+          >
+            <p>
+              Art caffe nastao je iz želje da napravimo prostor u kome kafa nije samo napitak, već mali ritual: miris
+              sveže meljanja, topli šolja u rukama i razgovor koji teče prirodno.
+            </p>
+            <p>
+              Verujemo da dobar kafić spaja ukus, gostoprimstvo i estetiku. Zato biramo pažljivo sastojke, slušamo goste
+              i negujemo detalje — od muzike u pozadini do načina na koji predstavljamo naše specijalitete.
+            </p>
+            <p>
+              Bilo da ste na brzom sastanku, uživate u knjizi ili delite desert sa prijateljima, želimo da se osećate kao
+              kod kuće, ali sa onim dodatnim pečatom koji čini dan lepšim.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {{FOOTER}}
+  </body>
+</html>

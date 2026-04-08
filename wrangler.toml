@@ -1,0 +1,9 @@
+# Cloudflare Pages — zamenite id ispod stvarnim KV namespace ID nakon `wrangler kv namespace create MENU_KV`
+name = "art-caffe"
+compatibility_date = "2024-11-01"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "MENU_KV"
+id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"

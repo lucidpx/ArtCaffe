@@ -1,0 +1,89 @@
+<a
+  href="#main"
+  class="fixed left-0 top-0 z-[100] -translate-y-full bg-accent px-4 py-2 text-sm font-semibold text-white focus:translate-y-0"
+  >Preskoči na sadržaj</a
+>
+<header
+  class="sticky top-0 z-50 border-b border-line/80 bg-surface/80 backdrop-blur-md transition-colors"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+    <a href="/" class="group flex items-center gap-3 shrink-0">
+      <img
+        src="/images/logo.jpg"
+        alt="Art caffe — logo"
+        width="140"
+        height="56"
+        class="h-12 w-auto max-w-[9rem] rounded-xl border border-line bg-white object-contain object-left shadow-sm transition group-hover:border-accent/50 md:h-14 md:max-w-[10rem]"
+      />
+      <span class="font-display whitespace-nowrap text-2xl font-normal leading-none text-ink md:text-3xl">Art caffe</span>
+    </a>
+
+    <nav
+      class="hidden items-center gap-1 md:flex md:flex-wrap md:justify-end"
+      aria-label="Glavna navigacija"
+    >
+      <a data-nav href="/" class="rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-accent">Početna</a>
+      <a data-nav href="/meni.html" class="rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-accent">Meni</a>
+      <a data-nav href="/o-nama.html" class="rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-accent">O nama</a>
+      <a data-nav href="/lokacija.html" class="rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-accent">Lokacija</a>
+      <a data-nav href="/kontakt.html" class="rounded-full px-3 py-2 text-sm text-ink-muted transition hover:text-accent">Kontakt</a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        id="theme-toggle"
+        class="btn-ghost flex h-10 w-10 items-center justify-center p-0"
+        aria-label="Promeni tamnu ili svetlu temu"
+      >
+        <span class="dark:hidden" aria-hidden="true">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+            />
+          </svg>
+        </span>
+        <span class="hidden dark:inline" aria-hidden="true">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+            />
+          </svg>
+        </span>
+      </button>
+
+      <button
+        type="button"
+        id="nav-open"
+        class="btn-ghost flex h-10 w-10 items-center justify-center p-0 md:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        aria-label="Otvori meni"
+      >
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-nav"
+    class="hidden border-t border-line bg-surface px-4 py-4 md:hidden"
+    hidden
+  >
+    <nav class="flex flex-col gap-1" aria-label="Mobilna navigacija">
+      <a data-nav href="/" class="rounded-lg px-3 py-3 text-ink-muted hover:bg-surface-muted hover:text-accent">Početna</a>
+      <a data-nav href="/meni.html" class="rounded-lg px-3 py-3 text-ink-muted hover:bg-surface-muted hover:text-accent">Meni</a>
+      <a data-nav href="/o-nama.html" class="rounded-lg px-3 py-3 text-ink-muted hover:bg-surface-muted hover:text-accent">O nama</a>
+      <a data-nav href="/lokacija.html" class="rounded-lg px-3 py-3 text-ink-muted hover:bg-surface-muted hover:text-accent">Lokacija</a>
+      <a data-nav href="/kontakt.html" class="rounded-lg px-3 py-3 text-ink-muted hover:bg-surface-muted hover:text-accent">Kontakt</a>
+    </nav>
+  </div>
+</header>

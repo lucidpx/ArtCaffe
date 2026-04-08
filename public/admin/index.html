@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sr-Latn" class="h-full dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Admin — Art caffe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/admin.js" defer></script>
+  </head>
+  <body class="min-h-full bg-surface text-ink">
+    <div class="min-h-screen border-b border-line bg-surface-muted/30 px-4 py-4 md:px-8">
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-widest text-accent">Art caffe</p>
+          <h1 class="text-xl font-semibold text-ink">Administracija menija</h1>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="/" class="btn-ghost text-sm">Nazad na sajt</a>
+          <button type="button" id="admin-logout" class="btn-ghost hidden text-sm">Odjavi se</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-5xl px-4 py-10 md:px-8">
+      <section id="login-section" class="mx-auto max-w-md card">
+        <h2 class="text-lg font-semibold text-ink">Prijava</h2>
+        <p class="mt-2 text-sm text-ink-muted">Unesite administratorsku lozinku.</p>
+        <form id="login-form" class="mt-6 space-y-4">
+          <div>
+            <label for="admin-password" class="block text-sm font-medium text-ink">Lozinka</label>
+            <input
+              id="admin-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+              class="mt-1 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+            />
+          </div>
+          <p id="login-error" class="hidden text-sm text-red-600 dark:text-red-400" role="alert"></p>
+          <button type="submit" class="btn-primary w-full">Prijavi se</button>
+        </form>
+      </section>
+
+      <section id="dash-section" class="hidden space-y-10">
+        <div class="card">
+          <h2 class="text-lg font-semibold text-ink" id="form-title">Nova stavka</h2>
+          <form id="item-form" class="mt-6 grid gap-4 sm:grid-cols-2">
+            <input type="hidden" id="field-id" name="id" value="" />
+            <div class="sm:col-span-2">
+              <label for="field-name" class="block text-sm font-medium text-ink">Naziv</label>
+              <input
+                id="field-name"
+                name="name"
+                required
+                class="mt-1 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              />
+            </div>
+            <div>
+              <label for="field-category" class="block text-sm font-medium text-ink">Kategorija</label>
+              <input
+                id="field-category"
+                name="category"
+                required
+                placeholder="npr. Kafa"
+                class="mt-1 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              />
+            </div>
+            <div>
+              <label for="field-price" class="block text-sm font-medium text-ink">Cena (RSD)</label>
+              <input
+                id="field-price"
+                name="price"
+                type="number"
+                min="0"
+                step="1"
+                required
+                class="mt-1 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="field-description" class="block text-sm font-medium text-ink">Opis (opciono)</label>
+              <textarea
+                id="field-description"
+                name="description"
+                rows="3"
+                class="mt-1 w-full rounded-xl border border-line bg-surface px-4 py-3 text-ink focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              ></textarea>
+            </div>
+            <div class="flex flex-wrap gap-3 sm:col-span-2">
+              <button type="submit" class="btn-primary" id="form-submit">Sačuvaj stavku</button>
+              <button type="button" id="form-cancel" class="btn-ghost hidden">Otkaži izmenu</button>
+            </div>
+          </form>
+          <p id="form-msg" class="mt-4 hidden text-sm" role="status"></p>
+        </div>
+
+        <div class="card overflow-x-auto">
+          <h2 class="text-lg font-semibold text-ink">Stavke menija</h2>
+          <p id="dash-error" class="mt-2 hidden text-sm text-red-600 dark:text-red-400"></p>
+          <table class="mt-6 w-full min-w-[640px] text-left text-sm">
+            <thead>
+              <tr class="border-b border-line text-ink-muted">
+                <th class="pb-3 pr-4 font-medium">Naziv</th>
+                <th class="pb-3 pr-4 font-medium">Kategorija</th>
+                <th class="pb-3 pr-4 font-medium">Cena</th>
+                <th class="pb-3 font-medium text-right">Akcije</th>
+              </tr>
+            </thead>
+            <tbody id="items-tbody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

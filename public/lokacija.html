@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="sr-Latn" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Gde se nalazimo — adresa i mapa Art caffe." />
+    <title>Art caffe — Lokacija</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="/js/site.js" defer></script>
+  </head>
+  <body class="min-h-full">
+    {{HEADER}}
+
+    <main id="main" class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      <header class="mb-12 text-center md:text-left">
+        <h1 class="section-title">Lokacija</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-ink-muted md:mx-0">
+          Art caffe Paraćin — na adresi ispod. Radujemo se vašem dolasku.
+        </p>
+      </header>
+
+      <div class="grid gap-10 lg:grid-cols-2">
+        <div class="card space-y-4">
+          <h2 class="font-display text-3xl text-ink">Adresa</h2>
+          <address class="not-italic text-ink-muted">
+            Vojvode Mišića 31<br />
+            35250 Paraćin, Srbija
+          </address>
+          <p class="text-sm text-ink-muted">
+            U centru Paraćina, lako dostupno peške i kolima.
+          </p>
+          <a
+            href="https://www.google.com/maps/place/Art+caffe+paracin/data=!4m2!3m1!1s0x4756bf001cad26ef:0x3121e736db9cdcae?sa=X&amp;ved=1t:242&amp;ictx=111"
+            class="btn-maps w-full sm:w-auto"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Nađi nas na Google mapama</a
+          >
+        </div>
+
+        <div class="card overflow-hidden p-0">
+          <div
+            class="h-64 w-full min-h-[220px] bg-surface-muted md:h-80"
+            data-artcaffe-map
+            role="region"
+            aria-label="Interaktivna mapa — Paraćin, oznaka Art caffe"
+          ></div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="/js/map-location.js" defer></script>
+    {{FOOTER}}
+  </body>
+</html>

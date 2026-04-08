@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sr-Latn" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Art caffe — kafić gde se susreću kvalitetna kafa, ukusna hrana i umetnički duh. Dobrodošli."
+    />
+    <title>Art caffe — Početna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="/js/site.js" defer></script>
+  </head>
+  <body class="min-h-full">
+    {{HEADER}}
+
+    <main id="main">
+      <section
+        id="parallax-root"
+        class="relative flex min-h-[88vh] flex-col items-center justify-center overflow-hidden bg-surface px-4 pb-20 pt-28 md:min-h-[90vh]"
+      >
+        <!-- Fotografija pozadine (niska neprozirnost), vidljiva kroz narandžasti mesh -->
+        <div
+          class="pointer-events-none absolute inset-0 z-0 bg-[url('/images/hero-parallax-bg.png')] bg-cover bg-center opacity-[0.22] dark:opacity-[0.2]"
+          aria-hidden="true"
+        ></div>
+        <!-- Narandžasti gradijent / „mesh“ — providan prema slici ispod -->
+        <div
+          class="pointer-events-none absolute inset-0 z-[1] bg-hero-mesh opacity-[0.88] dark:opacity-[0.82]"
+          aria-hidden="true"
+        ></div>
+        <!-- Blaga mrlja da tekst ostane čitljiv -->
+        <div
+          class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-surface/40 via-transparent to-surface/55 dark:from-black/35 dark:via-transparent dark:to-black/50"
+          aria-hidden="true"
+        ></div>
+
+        <div
+          class="pointer-events-none absolute inset-0 z-[2] lattice-bg opacity-35 dark:opacity-20"
+          data-parallax-speed="0.12"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute -left-32 top-1/4 z-[2] h-72 w-72 rounded-full bg-accent/20 blur-3xl dark:bg-accent/15"
+          data-parallax-speed="0.25"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="pointer-events-none absolute -right-24 bottom-1/4 z-[2] h-96 w-96 rounded-full bg-accent-warm/15 blur-3xl"
+          data-parallax-speed="0.18"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative z-10 mx-auto max-w-4xl text-center">
+          <p class="animate-fade-up text-sm font-semibold uppercase tracking-[0.2em] text-accent dark:text-accent-warm">
+            Dobrodošli
+          </p>
+          <h1 class="animate-fade-up mt-4 font-display text-5xl text-ink sm:text-6xl md:text-7xl lg:text-8xl" style="animation-delay: 0.05s">
+            Art caffe
+          </h1>
+          <p
+            class="animate-fade-up mx-auto mt-6 max-w-2xl text-lg text-ink-muted md:text-xl"
+            style="animation-delay: 0.1s"
+          >
+            Mesto gde aroma sveže kafe, pažljivo pripremljene poslastice i inspirativna atmosfera stvaraju savršen
+            predah od užurbanog dana.
+          </p>
+          <div
+            class="animate-fade-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap"
+            style="animation-delay: 0.15s"
+          >
+            <a href="/meni.html" class="btn-maps">Pogledajte meni</a>
+            <a
+              href="https://www.google.com/maps/place/art+caffe+paracin/data=!4m2!3m1!1s0x4756bf001cad26ef:0x3121e736db9cdcae?sa=X&amp;ved=1t:242&amp;ictx=111"
+              class="btn-maps-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ostavi recenziju</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 py-20 md:px-6" aria-label="Kafa, ukus i atmosfera">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+          <figure class="card overflow-hidden p-0 ring-1 ring-line/80">
+            <img
+              src="/images/kafa-1.png"
+              alt="Šoljica kafe u toplom ambijentu Art caffe"
+              width="600"
+              height="800"
+              loading="lazy"
+              decoding="async"
+              class="aspect-[3/4] w-full object-cover md:aspect-[4/5]"
+            />
+          </figure>
+          <figure class="card overflow-hidden p-0 ring-1 ring-line/80">
+            <img
+              src="/images/kafa-2.png"
+              alt="Trenutak za kafu — Art caffe"
+              width="600"
+              height="800"
+              loading="lazy"
+              decoding="async"
+              class="aspect-[3/4] w-full object-cover md:aspect-[4/5]"
+            />
+          </figure>
+          <figure class="card overflow-hidden p-0 ring-1 ring-line/80">
+            <img
+              src="/images/kafa-3.png"
+              alt="Latte umetnost i detalji u našem prostoru"
+              width="600"
+              height="800"
+              loading="lazy"
+              decoding="async"
+              class="aspect-[3/4] w-full object-cover md:aspect-[4/5]"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 py-16 md:px-6" aria-labelledby="map-home-heading">
+        <h2 id="map-home-heading" class="section-title mb-8 text-center md:text-left">Gde nas nalazite</h2>
+        <div class="card overflow-hidden p-0">
+          <div
+            class="h-64 w-full min-h-[220px] bg-surface-muted md:h-80"
+            data-artcaffe-map
+            role="region"
+            aria-label="Interaktivna mapa — Paraćin, oznaka Art caffe"
+          ></div>
+          <div class="flex items-end justify-between gap-3 p-4">
+            <p class="min-w-0 flex-1 text-xs text-ink-muted">
+              Prikaz okoline Paraćina (OpenStreetMap). Za rutnu navigaciju u Google mape koristite ikonu desno.
+            </p>
+            <a
+              href="https://www.google.com/maps/place/Art+caffe+paracin/data=!4m2!3m1!1s0x4756bf001cad26ef:0x3121e736db9cdcae?sa=X&amp;ved=1t:242&amp;ictx=111"
+              class="shrink-0 rounded-lg p-1.5 text-ink-muted ring-1 ring-line transition hover:bg-surface-muted hover:text-accent hover:ring-accent/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otvori Art caffe u Google Maps"
+              title="Google Maps — Art caffe Paraćin"
+            >
+              <svg class="h-8 w-8" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="#EA4335"
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 7a2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-6xl px-4 py-20 md:px-6">
+        <div class="card flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+          <div class="min-w-0 lg:max-w-xl">
+            <h2 class="font-display text-4xl text-ink">Posetite nas</h2>
+            <p class="mt-2 text-ink-muted">
+              Radujemo se vašem dolasku. Proverite radno vreme i put do nas na stranicama ispod.
+            </p>
+          </div>
+          <nav
+            class="grid w-full grid-cols-1 gap-3 sm:grid-cols-3 sm:max-w-none lg:w-auto lg:min-w-[min(100%,28rem)]"
+            aria-label="Brzi linkovi"
+          >
+            <a
+              href="/lokacija.html"
+              class="btn-ghost inline-flex min-h-[2.75rem] w-full items-center justify-center px-6 py-3 text-center text-sm font-semibold sm:min-w-0"
+              >Lokacija</a
+            >
+            <a
+              href="/kontakt.html"
+              class="btn-ghost inline-flex min-h-[2.75rem] w-full items-center justify-center px-6 py-3 text-center text-sm font-semibold sm:min-w-0"
+              >Kontakt</a
+            >
+            <a
+              href="https://www.google.com/maps/place/art+caffe+paracin/data=!4m2!3m1!1s0x4756bf001cad26ef:0x3121e736db9cdcae?sa=X&amp;ved=1t:242&amp;ictx=111"
+              class="btn-ghost inline-flex min-h-[2.75rem] w-full items-center justify-center px-6 py-3 text-center text-sm font-semibold sm:min-w-0"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Ostavi recenziju</a
+            >
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="" defer></script>
+    <script src="/js/map-location.js" defer></script>
+    {{FOOTER}}
+  </body>
+</html>

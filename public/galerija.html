@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sr-Latn" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Galerija Art caffe — fotografije i video zapisi iz našeg prostora." />
+    <title>Art caffe — Galerija</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700&family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="/js/site.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+  </head>
+  <body class="min-h-full">
+    {{HEADER}}
+
+    <main id="main" class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      <header class="mb-12 text-center md:text-left">
+        <h1 class="section-title">Galerija</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-ink-muted md:mx-0">
+          Pogledajte atmosferu i detalje koje volimo. Slike možete uvećati klikom; video zapisi imaju ugrađene kontrole
+          reprodukcije.
+        </p>
+      </header>
+
+      <div id="gallery-root" class="min-h-[8rem]"></div>
+    </main>
+
+    <div
+      id="gallery-lightbox"
+      class="fixed inset-0 z-[200] hidden bg-black/90 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="Uvećana fotografija"
+    >
+      <button
+        type="button"
+        data-close-lightbox
+        class="absolute right-4 top-4 z-10 rounded-full border border-white/30 bg-black/50 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        Zatvori
+      </button>
+      <div class="flex h-full min-h-0 items-center justify-center pt-10">
+        <img
+          id="gallery-lightbox-img"
+          src=""
+          alt=""
+          class="max-h-[min(90vh,900px)] max-w-full rounded-lg object-contain shadow-2xl outline-none"
+          tabindex="-1"
+        />
+      </div>
+    </div>
+
+    {{FOOTER}}
+  </body>
+</html>

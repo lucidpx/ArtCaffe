@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: 250 250 249;
+    --surface-muted: 245 245 244;
+    --ink: 23 23 23;
+    --ink-muted: 82 82 82;
+    --accent: 185 28 28;
+    --accent-warm: 234 88 12;
+    --line: 228 228 231;
+  }
+
+  .dark {
+    --surface: 10 10 10;
+    --surface-muted: 26 26 26;
+    --ink: 250 250 249;
+    --ink-muted: 161 161 170;
+    --accent: 248 113 113;
+    --accent-warm: 251 146 60;
+    --line: 39 39 42;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Great Vibes i slične skripte — bez veštačkog bolda */
+  .font-display {
+    @apply font-normal;
+  }
+
+  .nav-active {
+    @apply text-accent font-semibold;
+  }
+
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-accent to-accent-warm px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-warm focus-visible:ring-offset-2 focus-visible:ring-offset-surface;
+  }
+
+  .btn-primary::after {
+    content: "";
+    @apply pointer-events-none absolute inset-0 bg-btn-shine opacity-0 transition-opacity duration-500;
+  }
+
+  .btn-primary:hover::after {
+    @apply opacity-100;
+  }
+
+  .btn-ghost {
+    @apply rounded-full border border-line bg-surface-muted/50 px-4 py-2 text-sm font-medium text-ink transition hover:border-accent/40 hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent;
+  }
+
+  /* Meni — cena */
+  .menu-price {
+    @apply inline-flex w-fit max-w-full shrink-0 items-baseline justify-end self-end rounded-xl border border-accent/25 bg-gradient-to-br from-accent/10 to-accent-warm/15 px-3.5 py-2 text-base font-bold tabular-nums leading-none tracking-tight text-accent shadow-sm ring-1 ring-inset ring-accent/10 dark:border-accent-warm/40 dark:from-accent-warm/15 dark:to-accent/10 dark:text-accent-warm dark:ring-accent-warm/15 sm:self-auto sm:text-lg;
+  }
+
+  /* Lokacija — Google Maps CTA (narandžasto, drugačije od btn-primary) */
+  .btn-maps {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-accent-warm bg-gradient-to-b from-accent-warm/15 to-accent/10 px-6 py-2.5 text-sm font-semibold text-accent-warm shadow-sm transition hover:border-accent hover:from-accent-warm/25 hover:to-accent/15 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-warm focus-visible:ring-offset-2 focus-visible:ring-offset-surface dark:from-accent-warm/20 dark:to-accent/10 dark:hover:from-accent-warm/30 dark:hover:to-accent/15;
+  }
+
+  /* Ista visina / padding kao .btn-maps — sekundarni CTA (npr. hero) */
+  .btn-maps-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-line bg-surface-muted/55 px-6 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:border-accent/40 hover:text-accent hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface dark:border-line dark:bg-surface-muted/25 dark:hover:border-accent-warm/45 dark:hover:text-accent-warm;
+  }
+
+  .card {
+    @apply rounded-2xl border border-line bg-surface-muted/40 p-6 backdrop-blur-sm dark:bg-surface-muted/20;
+  }
+
+  .section-title {
+    @apply font-display text-4xl text-ink sm:text-5xl md:text-6xl;
+  }
+
+  .lattice-bg {
+    background-image: linear-gradient(
+        rgb(var(--line) / 0.35) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgb(var(--line) / 0.35) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent);
+  }
+
+  /* Leaflet — mapa lokacije */
+  .leaflet-container {
+    font-family: inherit;
+  }
+
+  .artcaffe-div-icon {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .artcaffe-map-pin {
+    @apply flex flex-col items-center;
+    filter: drop-shadow(0 3px 6px rgb(0 0 0 / 0.4));
+  }
+
+  .artcaffe-map-pin__head {
+    @apply flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white;
+    border: 3px solid #000;
+  }
+
+  .artcaffe-map-pin__head img {
+    @apply h-full w-full object-contain object-center p-0.5;
+  }
+
+  .artcaffe-map-pin__stem {
+    @apply -mt-0.5;
+    width: 0;
+    height: 0;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 14px solid #000;
+  }
+}
